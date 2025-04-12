@@ -14,18 +14,26 @@ npm install
 npm run build
 cd ..
 
+echo alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)' >> .bashrc
+source .bashrc
 laravel new --react --pest --npm test-project-react
 cp /home/user/bin/env-sample ./test-project-react/.env
 cd test-project-react
 php artisan key:generate
 php artisan migrate
+php artisan sail:install --with=mariadb,mailpit
 npm install
 npm run build
-cd ..
+cd
 
+cd ..
 
 symfony new --webapp test-project-symfony
 cd test-project-symfony
+composer require --dev debug
+composer require doctrine
 composer require symfony/ux-react
 npm install -D @babel/preset-react --force
-
+composer require symfonycasts/tailwind-bundle
+php bin/console tailwind:init
+docker compose build

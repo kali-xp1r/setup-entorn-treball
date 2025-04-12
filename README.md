@@ -6,6 +6,49 @@ Aquest repositori conté els scripts necessaris per configurar un entorn de dese
 
 Si trobeu a faltar algun component, eina o configuració ens ho podeu fer arribar amb un pull-request o en un correu.
 
+Per instal·lar el repositori cal tenir el git configurat
+
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install git
+git clone https://github.com/Skill-17-Cendrassos/setup-entorn-treball.git
+```
+
+## Instal·lació de l'entorn de desenvolupament
+
+**Ús recomanat**
+
+Per instal·lar les eines i deixar l'entorn configurat:
+
+```bash
+cd setup-entorn-treball
+chmod +x setup.sh
+sudo ./setup.sh
+```
+
+Per crear l'entorn de desenvolupament:
+
+```bash
+cd 
+sh ./setup-entorn-treball/workenviroment.sh
+```
+
+## Si es vol utilitzar MailPit per simular el servei de correu
+
+Si per algun procés cal enviar correus, l'entorn tindrà un contenidor de Docker amb el servei MailPit a punt.
+
+Per iniciar el servei: 
+
+```bash
+mailpit start
+```
+
+Per aturar-lo:
+```bash
+mailpit stop
+```
+
 ## Contingut del repositori
 
 ### `setup.sh`
@@ -15,12 +58,6 @@ Script principal que automatitza la instal·lació de l’entorn. Executa els sc
 2. `install.sh` – Instal·lació del sistema i eines de desenvolupament.
 3. Reinicia el sistema per aplicar canvis.
 
-**Ús recomanat:**
-```bash
-chmod +x setup.sh
-sudo ./setup.sh
-```
-
 ---
 
 ### `install.sh`
@@ -29,7 +66,7 @@ Instal·la i configura:
 - **Sistema base i Git**
 - **PHP 8.4** amb extensions comunes i Apache
 - **Composer**
-- **MySQL** (Crea dues bases de dades testproject i testproject2. També crea l'usuari skill17 amb password cendrassos amb permissos per manipular les bases de dades)
+- **MariaDb** (Crea dues bases de dades testproject i testproject2. També crea l'usuari user amb password skill17 amb permissos per manipular les bases de dades)
 - **phpMyAdmin**  Hi podeu accedir amb http://localhost/phpmyadmin
 - **Docker i Docker Compose**
 - **Node.js i npm**
@@ -53,7 +90,7 @@ Crea dues bases de dades
 - testproject
 - testproject2
 
-I l'usuari skill17 amb password cendrassos, que té permissos per gestionar aquestes bases dades.
+I l'usuari **user** amb password **skill17**, que té permissos per gestionar aquestes bases dades.
 
 ---
 
@@ -89,25 +126,15 @@ Fitxer `.env` d'exemple utilitzat en els projectes Laravel.
 
 ---
 
-## Instruccions d'instal·lació
+Pel projectes Symfony:
 
-```bash
-git clone https://github.com/usuari/entorn-skill17.git
-cd entorn-skill17
-chmod +x *.sh
-sudo ./setup.sh
-```
+- Instal·la bundle
+- S’instal·len i es compilen les dependències frontend
+- Instal·la contenidors Docker
 
-Després del reinici, pots executar opcionalment l'entorn de treball:
-
-```bash
-sh ./work-enviroment.sh
-```
-
----
 
 ## Autor
 
 Cendrassos - Skill17  
-[sllado1@cendrassos.net](mailto:sllado1@cendrassos.net)
-[dprados@cendrassos.net](mailto:dprados@cendrassos.net)
+- [sllado1@cendrassos.net](mailto:sllado1@cendrassos.net)
+- [dprados@cendrassos.net](mailto:dprados@cendrassos.net)

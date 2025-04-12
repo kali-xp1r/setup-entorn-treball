@@ -23,8 +23,8 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 mv composer.phar /usr/local/bin/composer
 
-# mysql
-apt install mysql-server -y
+# mariadb
+apt install mariadb-server -y
 apt install phpmyadmin -y
 mysql < $(dirname "$0")/install.sql
 
@@ -44,6 +44,10 @@ npm cache clean -f
 npm install -g n
 n stable
 npm install npm@latest -y
+
+#mailpit
+cp ./mailpit.sh /usr/bin/mailpit
+chmod 755 /usr/bin/mailpit
 
 #symfony
 curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
