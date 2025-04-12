@@ -6,8 +6,8 @@ cd /home/user/Documents
 git config --global user.email catskills@cendrassos.net
 git config --global user.name  skill17
 
-echo export PATH=\"\$PATH:\$HOME/.config/composer/vendor/bin\" >> ~/.bashrc
-echo alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)' >> ~/.bashrc
+echo export PATH=\$PATH:\$HOME/.config/composer/vendor/bin >> ~/.bashrc
+echo alias sail=\'sh \$\(\[ -f sail \] \&\& echo sail \|\| echo vendor/bin/sail\)\' >> ~/.bashrc
 
 composer global require laravel/installer
 
