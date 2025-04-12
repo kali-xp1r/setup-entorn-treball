@@ -1,4 +1,6 @@
 #!/bin/sh
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
 cd /home/user/Documents
 
 git config --global user.email catskills@cendrassos.net
@@ -6,7 +8,7 @@ git config --global user.name  skill17
 
 
 laravel new --vue --pest --npm test-project-vue
-cp /home/user/bin/env-sample ./test-project-vue/.env
+cp $SCRIPT_DIR/bin/env-sample ./test-project-vue/.env
 cd test-project-vue
 php artisan key:generate
 php artisan migrate
@@ -17,11 +19,12 @@ cd ..
 echo alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)' >> .bashrc
 source .bashrc
 laravel new --react --pest --npm test-project-react
-cp /home/user/bin/env-sample ./test-project-react/.env
+cp $SCRIPT_DIR/bin/env-sample ./test-project-react/.env
 cd test-project-react
 php artisan key:generate
 php artisan migrate
 php artisan sail:install --with=mariadb,mailpit
+sail build
 npm install
 npm run build
 cd

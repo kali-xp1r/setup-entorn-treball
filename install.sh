@@ -54,7 +54,7 @@ curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
 apt install symfony-cli
 
 #laravel
-bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
+#bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
 
 #vscode
 snap install code  --classic
