@@ -1,4 +1,4 @@
 #!/bin/sh
-sudo ./install-vbox.sh
-sudo ./install.sh
-sudo reboot
+sh ./install-vbox.sh
+sh ./install.sh
+reboot
