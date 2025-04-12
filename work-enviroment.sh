@@ -8,6 +8,7 @@ git config --global user.name  skill17
 
 echo export PATH=\$PATH:\$HOME/.config/composer/vendor/bin >> ~/.bashrc
 echo alias sail=\'sh \$\(\[ -f sail \] \&\& echo sail \|\| echo vendor/bin/sail\)\' >> ~/.bashrc
+source ~/.bashrc
 
 composer global require laravel/installer
 
@@ -21,7 +22,7 @@ npm run build
 cd ..
 
 
-source .bashrc
+
 laravel new --react --pest --npm test-project-react
 cp $SCRIPT_DIR/bin/env-sample ./test-project-react/.env
 cd test-project-react
@@ -35,10 +36,13 @@ cd
 
 cd ..
 
-symfony new --webapp test-project-symfony
+composer create-project symfony/skeleton:"7.2.x" test-project-symfony
 cd test-project-symfony
+composer require webapp
+composer require logger
 composer require --dev debug
-composer require doctrine
+composer require symfony/orm-pack
+composer require --dev symfony/maker-bundle
 composer require symfony/ux-react
 npm install -D @babel/preset-react --force
 composer require symfonycasts/tailwind-bundle
