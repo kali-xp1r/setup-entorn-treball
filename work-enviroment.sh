@@ -18,6 +18,7 @@ cd test-project-vue
 php artisan key:generate
 php artisan migrate
 npm install
+npm i --save @fortawesome/free-regular-svg-icons
 npm run build
 cd ..
 
@@ -31,24 +32,27 @@ php artisan migrate
 php artisan sail:install --with=mariadb,mailpit
 ./vendor/bin/sail build
 npm install
+npm i --save @fortawesome/free-regular-svg-icons
 npm run build
-cd
+
 
 cd ..
 
 composer create-project symfony/skeleton:"7.2.x" test-project-symfony
 cd test-project-symfony
-composer require webapp
-composer require logger
-composer require --dev debug
-composer require symfony/orm-pack
-composer require --dev symfony/maker-bundle
-composer require symfony/ux-react
+composer config extra.symfony.docker true
+composer require webapp -n
+composer require logger -n
+composer require --dev debug -n
+composer require symfony/orm-pack -n
+composer require --dev symfony/maker-bundle -n
+composer require symfony/ux-react -n
 npm install -D @babel/preset-react --force
-composer require symfonycasts/tailwind-bundle
+npm i --save @fortawesome/free-regular-svg-icons
+composer require symfonycasts/tailwind-bundle -n
 php bin/console tailwind:init
 docker compose build
 
 
 mailpit start
-mailpit stop
+mailpit down
