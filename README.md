@@ -30,8 +30,7 @@ sudo ./setup.sh
 Per crear l'entorn de desenvolupament:
 
 ```bash
-cd 
-sh ./setup-entorn-treball/workenviroment.sh
+sh workenviroment.sh
 ```
 
 ## Si es vol utilitzar MailPit per simular el servei de correu
