@@ -29,7 +29,7 @@ cd test-project-react
 php artisan key:generate
 php artisan migrate
 php artisan sail:install --with=mariadb,mailpit
-sail build
+./vendor/bin/sail build
 npm install
 npm run build
 cd
