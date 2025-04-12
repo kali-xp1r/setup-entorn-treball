@@ -51,7 +51,7 @@ chmod 755 /usr/bin/mailpit
 
 #symfony
 curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | bash
-apt install symfony-cli
+apt install symfony-cli -y
 
 #laravel
 #bash -c "$(curl -fsSL https://php.new/install/linux/8.4)"
