@@ -10,7 +10,6 @@ Per instal·lar el repositori cal tenir el git configurat
 
 ```bash
 sudo apt update
-sudo apt upgrade
 sudo apt install git
 git clone https://github.com/Skill-17-Cendrassos/setup-entorn-treball.git
 ```
@@ -45,7 +44,7 @@ mailpit start
 
 Per aturar-lo:
 ```bash
-mailpit stop
+mailpit down
 ```
 
 ## Contingut del repositori
@@ -118,6 +117,13 @@ Pels projectes Laravel:
 - Es fa la migració de la base de dades
 - S’instal·len i es compilen les dependències frontend
 
+Pel projectes Symfony:
+
+- Instal·la bundle
+- S’instal·len i es compilen les dependències frontend
+
+En els dos entorns instal·la la llibreria de icones Fontawesome i el Bootstrap, tot i que per defecte està configurat el Tailwind. Ajustant la configuració es pot canviar d'un framework css a l'altre.
+
 ---
 
 ### `env-sample`
@@ -125,15 +131,9 @@ Fitxer `.env` d'exemple utilitzat en els projectes Laravel.
 
 ---
 
-Pel projectes Symfony:
 
-- Instal·la bundle
-- S’instal·len i es compilen les dependències frontend
-- Instal·la contenidors Docker
+## Autors
 
-
-## Autor
-
-Cendrassos - Skill17  
+Institut Cendrassos - Skill17  
 - [sllado1@cendrassos.net](mailto:sllado1@cendrassos.net)
 - [dprados@cendrassos.net](mailto:dprados@cendrassos.net)
