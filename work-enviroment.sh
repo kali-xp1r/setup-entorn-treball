@@ -6,6 +6,10 @@ cd /home/user/Documents
 git config --global user.email catskills@cendrassos.net
 git config --global user.name  skill17
 
+echo alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)' >> .bashrc
+echo export PATH=\"\$PATH:\$HOME/.config/composer/vendor/bin\" >> .bashrc
+
+composer global require laravel/installer
 
 laravel new --vue --pest --npm test-project-vue
 cp $SCRIPT_DIR/bin/env-sample ./test-project-vue/.env
@@ -16,7 +20,7 @@ npm install
 npm run build
 cd ..
 
-echo alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)' >> .bashrc
+
 source .bashrc
 laravel new --react --pest --npm test-project-react
 cp $SCRIPT_DIR/bin/env-sample ./test-project-react/.env
