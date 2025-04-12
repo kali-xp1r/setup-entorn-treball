@@ -19,6 +19,7 @@ php artisan key:generate
 php artisan migrate
 npm install
 npm i --save @fortawesome/free-regular-svg-icons
+npm i bootstrap@5.0.1
 npm run build
 cd ..
 
@@ -33,6 +34,7 @@ php artisan sail:install --with=mariadb,mailpit
 ./vendor/bin/sail build
 npm install
 npm i --save @fortawesome/free-regular-svg-icons
+npm i bootstrap@5.0.1
 npm run build
 
 
@@ -49,6 +51,7 @@ composer require --dev symfony/maker-bundle -n
 composer require symfony/ux-react -n
 npm install -D @babel/preset-react --force
 npm i --save @fortawesome/free-regular-svg-icons
+npm i bootstrap@5.0.1
 composer require symfonycasts/tailwind-bundle -n
 php bin/console tailwind:init
 docker compose build
