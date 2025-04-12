@@ -44,3 +44,7 @@ npm install -D @babel/preset-react --force
 composer require symfonycasts/tailwind-bundle
 php bin/console tailwind:init
 docker compose build
+
+
+mailpit start
+mailpit stop
