@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 cd /home/user/Documents
@@ -17,6 +17,8 @@ cp $SCRIPT_DIR/bin/env-sample ./test-project-vue/.env
 cd test-project-vue
 php artisan key:generate
 php artisan migrate
+php artisan sail:install --with=mariadb,mailpit
+./vendor/bin/sail build
 npm install
 npm i --save @fortawesome/free-regular-svg-icons
 npm i bootstrap@5.0.1
@@ -36,9 +38,8 @@ npm install
 npm i --save @fortawesome/free-regular-svg-icons
 npm i bootstrap@5.0.1
 npm run build
-
-
 cd ..
+
 
 composer create-project symfony/skeleton:"7.2.x" test-project-symfony
 cd test-project-symfony
