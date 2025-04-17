@@ -65,3 +65,6 @@ cd ~/.local/share
 wget "https://drive.usercontent.google.com/download?id=1zZek3mcJwqtExNqE96RO-gxQPQptDE5V&export=download&authuser=0&confirm=t&uuid=512c63c5-0114-4a60-8145-a12c35be241e&at=APcmpow25rCJ5ut_EgBFiL_-EMrT%3A1744358315044" -O zeal.tgz
 tar -xzf zeal.tgz
 
+
+echo export PATH=\$PATH:\$HOME/.config/composer/vendor/bin >> /home/user/.bashrc
+echo alias sail=\'sh \$\(\[ -f sail \] \&\& echo sail \|\| echo vendor/bin/sail\)\' >> /home/user/.bashrc
